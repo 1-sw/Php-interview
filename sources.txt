@@ -5,3 +5,4 @@ https://www.guru99.com/php-interview-questions-answers.html
 https://qna.habr.com/q/2253
 https://emacsway.github.io/ru/tdd/
 https://netpoint-dc.com/blog/mysql-cluster-load-balancing-haproxy/
+https://habr.com/ru/post/247373/

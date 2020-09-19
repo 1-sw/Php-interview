@@ -3,3 +3,4 @@ https://gist.github.com/zert0man/12f1e76e01b1135f7d1672e00d23f0fb
 https://kobzarev.com/wp-content/uploads/books/php/PHPbook.pdf
 https://www.guru99.com/php-interview-questions-answers.html
 https://qna.habr.com/q/2253
+https://emacsway.github.io/ru/tdd/

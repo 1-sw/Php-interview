@@ -1,0 +1,12 @@
+<?php
+
+abstract class App 
+{
+  abstract function foo();
+  public static function lol(){
+    echo "LOL!";
+  }
+}
+App::lol();
+
+?>

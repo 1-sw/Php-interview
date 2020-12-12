@@ -1,0 +1,13 @@
+<?php
+// OPEN/CLOSED
+// BEFORE SOLID:
+
+class YourPhone
+{
+  protected string $name;
+  protected string $ip;
+  public stat int $pin;
+  public static string $phoneNumber;
+
+}
+?>

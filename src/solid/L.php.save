@@ -4,8 +4,8 @@
 class Rectangle
 {
     public function __construct(
-      private float $height,
-      private float $weight,
+      private int|float $height,
+      private int|float $weight,
     ){
       if($height < 0){
         $height = 0;
@@ -15,15 +15,15 @@ class Rectangle
       }
     }
     public function getHeight():float{
-        return $this->height;
+        settype($this->height,"float");
     }
     public function getWeight():float{
-        return $this->weight;
+        settype($this->weight,"float");
     }
+
 }
 
-
 $r = new Rectangle(5,5);
-
+echo $r->getHeight();
 
 ?>

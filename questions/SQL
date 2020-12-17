@@ -12,29 +12,42 @@ products_in_orders - таблица-связка “много ко многим
 Ваша задача предоставить следующую информацию по имеющимся таблицам и данным
 ------------------------------------------------------------------------------
 1.Получить контактный телефон пользователя с ID = 10
-SELECT phone_number FROM `users` WHERE id = 10
-Result: 421911527
+  SELECT phone_number FROM `users` WHERE id = 10
+  Result: 421911527
 ------------------------------------------------------------------------------
 2.Получить список(номер, название) категорий
-SELECT * FROM `categories`
+  SELECT * FROM `categories`
 ------------------------------------------------------------------------------
 3.Получить список товаров, который нет в наличии (amount = 0)
-SELECT * FROM `products` WHERE amount = 0
+  SELECT * FROM `products` WHERE amount = 0
 ------------------------------------------------------------------------------
 4.Получить список товаров, который осталось в наличии
-SELECT * FROM `products` WHERE amount >= 1
+  SELECT * FROM `products` WHERE amount >= 1
 ------------------------------------------------------------------------------
 5.Получить ID товара с наибольшей ценой
-SELECT id,MAX(price) FROM `products`
+  SELECT id,MAX(price) FROM `products`
 ------------------------------------------------------------------------------
 6.Получить ID товара с наименьшей ценой
-SELECT id,MIN(price) FROM `products`
+  SELECT id,MIN(price) FROM `products`
 ------------------------------------------------------------------------------
 7.Получить среднюю цену товаров в магазине.
-SELECT AVG(price) FROM `products`
+  SELECT AVG(price) FROM `products`
 ------------------------------------------------------------------------------JOIN`ы
 8.Получить число товаров в категории Telecommunication
-SELECT COUNT FROM `products` 
+  Черновик: SELECT * FROM `products` INNER JOIN 
+  Обработка вопроса:
+  У нас есть таблциа непосредсственно с продуктом: products(id,name,amount)
+  Также есть products_in_categories. Эти две таблицы больше всего подойдут 
+  под запрос, да и тем более, нам не нужны заказчики
+  и того, свалка из слов запроса: 
+  SELECT,*,FROM,JOIN,ON,`products`,`products_in_categories`
+  Чтобы правильно понять, напишем план:
+    1. Узнать id категории Telecommunication 
+    2. В таблице product_in_categories ищем и считаем айди из 1
+  Итого,все слова:SELECT,*,FROM,INNER JOIN,ON,`products`,`products_in_categories`,COUNT()
+  Разберем пошагово, как сделать запрос:
+  SELECT id FROM  `categories` WHERE name = "Telecommunication" INNER JOIN
+    `products_in_categories` ON product_in_categories.product_id = id 
 ------------------------------------------------------------------------------
 9.Получить список товаров, у которых нет ни одной категории
 ------------------------------------------------------------------------------

@@ -91,6 +91,7 @@ LEFT,INNER,RIGHT
 |2   |Some2|
 |3   |Some3|
 +----+-----+
+
  _id__Foo_  
 |1   |Foo1|
 |2   |Foo2|
@@ -108,9 +109,15 @@ SELECT * FROM Some INNER JOIN Foo ON Some.id = Foo.id
 +----+-----+-----+----+
 
 Системы контроля версий
+
 Какие знаешь системы контроля версий ?
+
 Как сделать коммит в Git 
+git commit -m ""
 Как создать ветку?
+git checkout -b some_branch
 Как переключиться на ветку?
+git checkout
 Как откатиться на один или несколько коммитов назад?
+
 

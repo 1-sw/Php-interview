@@ -34,29 +34,10 @@ products_in_orders - таблица-связка “много ко многим
   SELECT AVG(price) FROM `products`
 ------------------------------------------------------------------------------JOIN`ы
 8.Получить число товаров в категории Telecommunication
-  Черновик: SELECT * FROM `products` INNER JOIN 
-  Обработка вопроса:
-  У нас есть таблциа непосредсственно с продуктом: products(id,name,amount)
-  Также есть products_in_categories. Эти две таблицы больше всего подойдут 
-  под запрос, да и тем более, нам не нужны заказчики
-  и того, свалка из слов запроса: 
-  SELECT,*,FROM,JOIN,ON,`products`,`products_in_categories`
-  Чтобы правильно понять, напишем план:
-    1. Узнать id категории Telecommunication 
-    2. В таблице product_in_categories ищем и считаем айди из 1
-  Итого,все слова:SELECT,*,FROM,INNER JOIN,ON,`products`,`products_in_categories`,COUNT()
-  Разберем пошагово, как сделать запрос:
-  SELECT * FROM  categories  WHERE name = "Telecommunication" INNER JOIN
-    products_in_categories ON product_in_categories.product_id = categories.id
-  Редактируем:
-  SELECT * FROM `products` INNER JOIN products_in_categories ON 
-	products.id = products_in_categories.product_id
-  Редактируем:
-  SELECT * FROM `products` INNER JOIN products_in_categories ON 
-	products.id = products_in_categories.product_id INNER JOIN
-        categories ON categories.name = "Telecommunication"      
+  
 ------------------------------------------------------------------------------
 9.Получить список товаров, у которых нет ни одной категории
+  
 ------------------------------------------------------------------------------
 10.Получить список категорий, у которых нет ни одного товара
 ------------------------------------------------------------------------------
